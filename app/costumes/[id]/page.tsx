@@ -1,5 +1,6 @@
 import { costumes } from "../data";
 import CostumeDetails from "./CostumeDetails";
+import Link from "next/link";
 
 export default function CostumePage({ params }: { params: { id: string } }) {
   const costume = costumes.find(c => c.id === parseInt(params.id));
@@ -9,9 +10,9 @@ export default function CostumePage({ params }: { params: { id: string } }) {
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-4">Costume Not Found</h1>
-          <a href="/" className="text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300">
+          <Link href="/" className="text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300">
             Return to Gallery
-          </a>
+          </Link>
         </div>
       </div>
     );
