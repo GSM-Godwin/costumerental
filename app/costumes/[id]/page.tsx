@@ -2,7 +2,7 @@ import { costumes } from "../data";
 import CostumeDetails from "./CostumeDetails";
 import Link from "next/link";
 
-export default function CostumePage({ params }: { params: { id: string } }) {
+export default async function CostumePage({ params }: { params: { id: string } }) {
   const costume = costumes.find(c => c.id === parseInt(params.id));
 
   if (!costume) {
